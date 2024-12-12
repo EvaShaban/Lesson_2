@@ -12,7 +12,6 @@ public class Main {
     }
 
 
-
     public static void checkSumSign() {
         int num1 = 6;
         int num2 = -100;
@@ -24,6 +23,7 @@ public class Main {
             System.out.println("Сумма отрицательная");
         }
     }
+
 
 
     public static void printColor() {
@@ -39,7 +39,7 @@ public class Main {
         }
     }
 
-    public static void compareNumbers() {
+    public static void compareNumbers () {
         int a = 50;
         int b = 50;
 
@@ -54,168 +54,107 @@ public class Main {
         }
     }
 
-    public static void summ() {
-        int x = 50;
-        int y = 10;
-
-        if ((x + y)>10 && (x + y)<20 ){
-            System.out.println("true");
-        }
-        else {
-            System.err.println("false");
-        }
-    }
-
-    public static void zero1() {
-        int[] arr1 = {0, -2, 4, 10, -22, 35, -14, 45};
-        int pos = 0;
-        int neg = 0;
-        for (int x : arr1) {
-            if (x >=0) {
-                pos++;
-            } else {
-                neg++;
-            }
+    static boolean sum_of_two_numbers(int a, int b) {
+        return a + b >=10 && a + b <=20;
         }
 
-        int[] arrpos = new int[pos];
-        int[] arrneg = new int[neg];
 
-        int countpos = 0;
-        int countneg = 0;
-        for (int x : arr1) {
-            if (x >= 0) {
-                arrpos[countpos] = x;
-                countpos++;
-            } else {
-                arrneg[countneg] = x;
-                countneg++;
-            }
-        }
+    public static void testing_for_positivity(int a) {
+        System.out.println(a >= 0? "Positive" : "Negative");
 
-        System.out.println(Arrays.toString(arrneg) + " Отрицательные числа ");
-        System.out.println(Arrays.toString(arrpos) + " Положительные числа ");
     }
 
 
-    public static void True1() {
-        Number[] nums = {10,-5,3,48,50, 0};
+    static boolean  integer_check(int a) {
+            return a < 0;
+        }
 
-        for (Number num : nums) {
-            System.out.println(num + " Является ли значение отрицательным? Ответ: " + isNegative(num));
+
+    static void  output_a_line_many_times(String line, int n) {
+
+        for (int i = 0; i < n; i++)
+            System.out.println(line);
+    }
+
+
+    static boolean leap_year(int year) {
+        return year % 100 != 0 && year % 4 == 0 || year % 400 ==0;
+    }
+
+
+    public static void array_with_loop(int[] replaceValues) {
+        for (int i = 0; i < replaceValues.length; i++) {
+            replaceValues[i] = (replaceValues[i] > 0)? 0 : 1;
+            System.out.print(replaceValues[i] + " ");
         }
     }
 
-    public static <T extends Number> boolean isNegative(T num) {
-        return num.intValue() < 0;
-    }
 
-
-    public static void count1 () {
-
-        String string="abc";
-
-        int count=3;
-
-        System.out.println("String :"+string.repeat(count));
-
-    }
-    public static void year1 () {
-        boolean a = true;
-        boolean b = false;
-        int year = 2024;
-        if(year%4==0 && year%100 !=0 || year%400==0){
-            System.out.println(a);
-        }
-        else {
-            System.out.println(b);
+    public static void empty_integer_array(int size) {
+        int[] fillArr = new int[size];
+        for (int i = 0; i < fillArr.length; i++) {
+            fillArr[i] = i + 1;
+            System.out.print(fillArr[i] + " ");
         }
     }
 
-    public static void massiv() {
-        int[] arr = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
 
+
+public static void array_with_multiplication(int[] multiplyOn2) {
+    for (int i = 0; i < multiplyOn2.length; i++) {
+        if (multiplyOn2[i] < 6) {
+            multiplyOn2[i] = multiplyOn2[i] * 2;
+        }
+        System.out.print(multiplyOn2[i] + " ");
+    }
+}
+
+
+
+
+    public static void square_two_dimensional_array() {
+        int[][] arr = new int[5][5];
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 0)
-                arr[i]++;
-            else
-                arr[i]--;
-        }
-        System.out.println(Arrays.toString(arr));
-    }
-    public static void pustoi() {
-        int[] array = new int[100];
-        for (int i = 0; i < 100; i++) {
-            array[i] = i + 1;
-            System.out.println(array[i]);
-        }
-    }
-
-        public static void massiv2() {
-            int[] arr = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
-
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] <6)
-                    arr[i]*=2;
-
+            for (int j = 0, x = arr[i].length - 1; j < arr[i].length; j++, x--) {
+                if (i == j || i == x) arr[i][j] = 1;
+                else arr[i][j] = 0;
+                System.out.print(arr[i][j] + " ");
             }
-
-            System.out.println(Arrays.toString(arr));
+            System.out.print("\n");
         }
-
-public static void kvadrat() {
-
-    int[][] arr = new int[5][5];
-    for (int i = 0; i < arr.length; i++) {
-        arr[i][i] = 1;
-        arr[i][arr.length - i - 1] = 1;
-    }
-    for (int i = 0; i < arr.length; i++) {
-        for (int j = 0; j < arr.length; j++) {
-            System.out.print(arr[i][j] + " ");
-        }
-        System.out.println();
-    }  }
-
-
-public static void len1() {
-    Scanner scanner = new Scanner(System.in);
-
-    System.out.print("Введите длину массива: ");
-    int len = scanner.nextInt();
-
-    int[] array = new int[len];
-
-    for (int i = 0; i < len; i++) {
-        System.out.print("Введите элемент " + (i + 1) + ": ");
-        array[i] = scanner.nextInt();
     }
 
-    System.out.println("Элементы массива:");
-    for (int i : array) {
-        System.out.println(i);
+
+
+public static void one_dimensional_array(int len, int initialValue) {
+            int[] arr = new int[len];
+            for (int i = 0; i < len; i++) {
+                arr[i] = initialValue;
+                System.out.print("[" + i + "]" + arr[i] + " ");
     }
 
 }
 
 
 
-
 public static void main(String[] args) {
+    int[] replaceValues = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+    int[] multiplyOn2 = {1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
+
         printThreeWords();
         checkSumSign();
         printColor();
-        compareNumbers();
-        summ();
-        zero1();
-        True1();
-        count1();
-        year1 ();
-        massiv();
-        pustoi();
-        massiv2();
-        kvadrat();
-        len1();
+        compareNumbers ();
+        sum_of_two_numbers(10,10);
+        testing_for_positivity(10);
+        integer_check(10);
+        output_a_line_many_times("ASDF",8);
+        leap_year(2024);
+        array_with_loop(replaceValues);
+        empty_integer_array(50);
+        array_with_multiplication(multiplyOn2);
+        square_two_dimensional_array();
+        one_dimensional_array(10,10);
 
 
 
